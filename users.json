@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Leonardo",
+    "apellido": "Tosoni",
+    "email": "leotosoni@gmail.com",
+    "password": "leonardo33",
+    "uuidCodigo": "c7ad5caa-e437-47ed-a73a-e6973f338270",
+    "utnCoins": 40.0
+  },
+  {
+    "nombre": "Amalia",
+    "apellido": "Gullo",
+    "email": "amegullo@hotmail.com",
+    "password": "amalia1",
+    "uuidCodigo": "80bc16d1-b3a1-41df-9168-80861040bca5",
+    "utnCoins": 100.0
+  },
+  {
+    "nombre": "Jose",
+    "apellido": "Argento",
+    "email": "joseargento@gmail.com",
+    "password": "argentojose2022",
+    "uuidCodigo": "7ca55a6f-305b-4a80-be06-c4595a0a6be6",
+    "utnCoins": 110.0
+  },
+  {
+    "nombre": "Mario",
+    "apellido": "Lopez",
+    "email": "mario@gmail.com",
+    "password": "mariolopez",
+    "uuidCodigo": "c81a958d-d8d1-415f-ab86-630c4aff1cd4",
+    "utnCoins": 100.0
+  },
+  {
+    "nombre": "Ana",
+    "apellido": "Belen",
+    "email": "anabelen@gmail.com",
+    "password": "anabelen",
+    "uuidCodigo": "7d0b6bbf-3296-4d66-ba07-fc192a17436f",
+    "utnCoins": 100.0
+  },
+  {
+    "nombre": "Julian",
+    "apellido": "Aguilar",
+    "email": "juliaguilar@gmail.com",
+    "password": "aguilar",
+    "uuidCodigo": "11013520-9471-4adf-9b4e-30041939bb25",
+    "utnCoins": 100.0
+  }
+]

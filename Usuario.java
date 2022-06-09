@@ -1,21 +1,30 @@
 package com.company.leotosoni;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
-public class Usuario {
+public class Usuario implements Serializable {
+
+    private static final long serialValue = 88392039029384L;
+
     private String nombre;
     private String apellido;
-    private String userName;
+    private String email;
     private String password;
     private UUID uuidCodigo;
     private double utnCoins = 100.0;
 
-    public Usuario(String nombre, String apellido, String userName, String password) {
+    public Usuario() {
+    }
+
+    public Usuario(String nombre, String apellido, String email, String password) {
+       this();
         this.nombre = nombre;
         this.apellido = apellido;
-        this.userName = userName;
+        this.email = email;
         this.password = password;
         this.uuidCodigo = UUID.randomUUID();
     }
@@ -36,12 +45,12 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String userName) {
+        this.email = userName;
     }
 
     public String getPassword() {
@@ -68,39 +77,27 @@ public class Usuario {
         this.utnCoins = utnCoins;
     }
 
-
-    public Transaccion nuevaTransferencia(Usuario destino, double monto) {
-        this.setUtnCoins(this.getUtnCoins()-monto);
-        return new Transaccion(this, destino, monto);
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Double.compare(usuario.utnCoins, utnCoins) == 0 && Objects.equals(nombre, usuario.nombre) && Objects.equals(apellido, usuario.apellido) && Objects.equals(email, usuario.email) && Objects.equals(password, usuario.password) && Objects.equals(uuidCodigo, usuario.uuidCodigo);
     }
 
-    public void validarTransaccion(Transaccion transaccion){
-        if(transaccion.getContador()<3)
-        {
-            transaccion.agregarUsuario(this);
-            if(transaccion.getContador()>=3)
-            {
-                transaccion.setEstado(Estado.APROBADA);
-                transaccion.setFechaFin(LocalDateTime.now());
-            }
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, apellido, email, password, uuidCodigo, utnCoins);
     }
 
-    public String mostrarTransaccionesPendientes(List<Transaccion> listaPend){
-        StringBuilder sb = new StringBuilder();
-        for(Transaccion transaccion : listaPend){
-            sb.append(transaccion.toString());
-        }
-        return sb.toString();
-    }
+
 
     @Override
     public String toString() {
         return "Usuario{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", uuidCodigo=" + uuidCodigo +
                 ", utnCoins=" + utnCoins +
