@@ -1,6 +1,8 @@
 package com.company.leotosoni;
 
-public enum Estado {
+import java.io.Serializable;
+
+public enum Estado implements Serializable {
     PENDIENTE,
     RECHAZADA,
     APROBADA
